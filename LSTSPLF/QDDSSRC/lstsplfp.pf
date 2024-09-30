@@ -1,0 +1,6 @@
+     A          R LSTSPLFREC
+     A            OPTION         2          TEXT('Option Code')
+     A            OPTCMD       256          TEXT('Option Command String')
+     A            PROMPT         1          TEXT('Prompt on the command Y/N')
+     A            DESC          30          TEXT('Description')
+     A          K OPTION

@@ -1,0 +1,168 @@
+     A*%%TS  SD  20231117  135147  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      ERRSFL
+     A*                                      ALTHELP
+     A*                                      HELP
+     A          R LSTSPLFSF                 SFL
+     A*%%TS  SD  20230511  091411  RTHOMPSON   REL-V7R3M0  5770-WDS
+     A            OPT            2A  B  9  2
+     A  26                                  DSPATR(PC)
+     A            PRTFIL        10A  O  9  7
+     A            USRNAM        10A  O  9 19
+     A            OUTQNM        10A  O  9 31
+     A            USRDTA        10A  O  9 43
+     A            STATUS         3A  O  9 55
+     A            PAGESN         4Y 0O  9 62EDTCDE(Z)
+     A            CURPAG         4Y 0O  9 70EDTCDE(Z)
+     A            COPIES         4Y 0O  9 76EDTCDE(Z)
+     A            JOBNM         10A  H
+     A            JOBNBR         6A  H
+     A            SPLFLC         4A  H
+     A          R LSTSPLFSC                 SFLCTL(LSTSPLFSF)
+     A*%%TS  SD  20231115  133219  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A                                      CSRLOC(CSRROW     CSRCOL)
+     A  41                                  SFLDSP
+     A  42                                  SFLDSPCTL
+     A  45                                  SFLCLR
+     A  99                                  SFLEND(*MORE)
+     A                                      SFLSIZ(0013)
+     A                                      SFLPAG(0012)
+     A                                  1 32'List Spooled Files'
+     A                                      DSPATR(HI)
+     A                                  3  2'Type options, press Enter.'
+     A                                      COLOR(BLU)
+     A                                  4  2'2=Change'
+     A                                      COLOR(BLU)
+     A                                  4 13'3=Hold'
+     A                                      COLOR(BLU)
+     A                                  4 22'4=Delete'
+     A                                      COLOR(BLU)
+     A                                  4 33'5=Display'
+     A                                      COLOR(BLU)
+     A                                  4 45'6=Release'
+     A                                      COLOR(BLU)
+     A                                  4 57'8=Attributes'
+     A                                      COLOR(BLU)
+     A                                  7 31'Device or'
+     A                                      DSPATR(HI)
+     A                                  7 61'Total'
+     A                                      DSPATR(HI)
+     A                                  7 71'Cur'
+     A                                      DSPATR(HI)
+     A                                  8  2'Opt  File        User        Queue-
+     A                                             User Data   Sts   Pages    P-
+     A                                      age  Copy'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A            CSRCOL         3S 0H
+     A            CSRROW         3S 0H
+     A            LSTUSR        10A  B  1 67CHANGE(27)
+     A                                  1 61'User:'
+     A                                      DSPATR(HI)
+     A                                  2 61'Outq:'
+     A                                      DSPATR(HI)
+     A            LSTOUTQ       10A  B  2 67CHANGE(27)
+     A            HIDE           4S 0H      SFLRCDNBR
+     A          R CMDLINE
+     A*%%TS  SD  20231117  135147  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A                                      CF03
+     A                                      CF05
+     A                                      CF21
+     A                                      CF12
+     A                                      CF04
+     A                                      CF01
+     A                                      CSRLOC(CSRROW     CSRCOL)
+     A                                      OVERLAY
+     A                                 22 15'F3=Exit   F4=Prompt   F5=Refresh  -
+     A                                       F21=Command Line   F12=Cancel'
+     A                                      COLOR(BLU)
+     A            CSRROW         3S 0H
+     A            CSRCOL         3S 0H
+     A                                 22  2'F1=Options'
+     A                                      COLOR(BLU)
+     A          R ERRSCR
+     A*%%TS  SD  19990610  113643  RICKYT      REL-V3R7M0  5716-PW1
+     A                                      OVERLAY
+     A                                 10  2'  (No spooled output files)'
+     A          R MSGSFL                    SFL
+     A                                      SFLMSGRCD(23)
+     A            MSGKEY                    SFLMSGKEY
+     A            PGMQ                      SFLPGMQ
+     A          R MSGCTL                    SFLCTL(MSGSFL)
+     A*%%TS  SD  19990612  120330  RICKYT      REL-V3R7M0  5716-PW1
+     A                                      OVERLAY
+     A                                      SFLDSP
+     A                                      SFLDSPCTL
+     A                                      SFLINZ
+     A N01                                  SFLEND
+     A                                      SFLSIZ(0020)
+     A                                      SFLPAG(0001)
+     A            PGMQ                      SFLPGMQ
+
+     A          R CUSTOMSF                  SFL
+     A*%%TS  SD  20231115  133219  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A            OPTCMD       256   H
+     A            @SELECT        1A  B  5  2
+     A            OPTION    R        O  5  6REFFLD(LSTSPLFREC/OPTION *LIBL/LSTS-
+     A                                      PLFP)
+     A            DESC      R        O  5 10REFFLD(LSTSPLFREC/DESC *LIBL/LSTSPL-
+     A                                      FP)
+     A            PROMPT    R        O  5 44REFFLD(LSTSPLFREC/PROMPT *LIBL/LSTS-
+     A                                      PLFP)
+     A          R CUSTOMSC                  SFLCTL(CUSTOMSF)
+     A*%%TS  SD  20231115  133219  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A                                      CF12
+     A                                      CF06
+     A  51                                  SFLDSP
+     A  52                                  SFLDSPCTL
+     A  55                                  SFLCLR
+     A  99                                  SFLEND
+     A                                      SFLSIZ(0007)
+     A                                      SFLPAG(0006)
+     A                                      WINDOW(5 2 12 50)
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI)-
+     A                                       (*CHAR '        '))
+     A                                      WDWTITLE((*TEXT 'Custom Options') *-
+     A                                      LEFT)
+     A                                      WDWTITLE((*TEXT 'Enter=Continue  F6-
+     A                                      =Add  F12=Cancel') *LEFT *BOTTOM)
+     A                                  4  1'Sel  Opt Description              -
+     A                                             Prompt'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  2  1'2=Edit  4=Delete'
+     A          R CUSTOM01
+     A*%%TS  SD  20231115  145718  RTHOMPSON   REL-V7R5M0  5770-WDS
+     A                                      WINDOW(5 10 11 65)
+     A                                      CF12
+     A                                      WDWBORDER((*COLOR BLU) (*DSPATR RI)-
+     A                                       (*CHAR '        '))
+     A                                      WDWTITLE((*TEXT 'Custom Options') *-
+     A                                      LEFT)
+     A                                      WDWTITLE((*TEXT 'Enter=Continue  F1-
+     A                                      2=Cancel') *LEFT *BOTTOM)
+     A                                  2  2'Option:'
+     A                                  3  2'Description:'
+     A                                  4  2'Command:'
+     A            @OPTCMD   R        B  5  2REFFLD(LSTSPLFREC/OPTCMD *LIBL/LSTS-
+     A                                      PLFP)
+     A                                      WRDWRAP
+     A                                      CNTFLD(064)
+     A                                      CHECK(LC)
+     A            @DESC     R        B  3 15REFFLD(LSTSPLFREC/DESC *LIBL/LSTSPL-
+     A                                      FP)
+     A                                      CHECK(LC)
+     A            @OPTION   R        B  2 10REFFLD(LSTSPLFREC/OPTION *LIBL/LSTS-
+     A                                      PLFP)
+     A  60                                  DSPATR(PR)
+     A*           PROMPT    R        B  9 10REFFLD(LSTSPLFREC/PROMPT *LIBL/LSTS-
+     A*                                     PLFP)
+     A*                                 9 13'(Y/N) prompt command'
+     A*                                     DSPATR(HI)
+     A                                  2 14'abbrv for option'
+     A                                      DSPATR(HI)
+     A                                  9  2'Prompt:'
+     A            @PROMPT   R        B  9 10REFFLD(LSTSPLFREC/PROMPT *LIBL/LSTS-
+     A                                      PLFP)
+     A            @ERRMSG       65A  O 10  1DSPATR(HI)
