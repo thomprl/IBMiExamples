@@ -12,3 +12,4 @@ Splitting a PDF document based on text in the PDF document
 https://www.linkedin.com/pulse/splitting-pdf-rpg-java-pdfbox-based-text-ricky-thompson-ygtte/
 
 The Sample_Invoice.zip contains the PDF document used in the Splitting a PDF document based on text in the document.
+https://github.com/thomprl/IBMiExamples/blob/release/PDFBox_Examples/Sample_Invoice.zip
