@@ -48,7 +48,7 @@ print("Start of Main Processing - " + time.strftime("%H:%M:%S"))
 #------------------------------------------------
 try: # Try to perform main logic
 
-   # TODO - Uncomment whichever connection string sample you want to use  
+   # TODO: - Uncomment whichever connection string sample you want to use  
 
    # ODBC default *LOCAL DSN connection string when running natively in PASE
    # *LOCAL DSN gets created when PASE ODBC driver is installed. 
