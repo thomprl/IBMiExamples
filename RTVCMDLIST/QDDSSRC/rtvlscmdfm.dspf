@@ -1,0 +1,32 @@
+     A*%%TS  SD  20230201  153201  RTHOMPSON   REL-V7R3M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3                  -
+     A                                             27 132 *DS4)
+     A          R RTVCMDSF                  SFL
+     A*%%TS  SD  20230201  153201  RTHOMPSON   REL-V7R3M0  5770-WDS
+     A            OPT            1A  B  3  2
+     A            #CMD          55A  O  3  6
+     A            COMMAND      256A  H
+     A          R RTVCMDSC                  SFLCTL(RTVCMDSF)
+     A*%%TS  SD  20230126  191527  RTHOMPSON   REL-V7R3M0  5770-WDS
+     A                                      SFLSIZ(0015)
+     A                                      SFLPAG(0014)
+     A                                      WINDOW(2 2 18 60)
+     A                                      CF03
+     A N99                                  PAGEDOWN(88)
+     A                                      OVERLAY
+     A  41                                  SFLDSP
+     A  42                                  SFLDSPCTL
+     A  45                                  SFLCLR
+     A  99                                  SFLEND(*MORE)
+     A                                  2  1'Opt'
+     A                                      DSPATR(HI)
+     A                                  2  6'Command'
+     A                                      DSPATR(HI)
+     A            HIDE           4S 0H      SFLRCDNBR
+     A                                  1 45'X=Select F3=Exit'
+     A                                      DSPATR(HI)
+     A          R ASSUME
+     A*%%TS  SD  20020504  151409  RICKYT      REL-V4R2M0  5769-PW1
+     A                                      ASSUME
+     A            FLD002         1   O  1  4

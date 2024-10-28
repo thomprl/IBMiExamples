@@ -1,0 +1,2 @@
+This will retrieve the last few commands that you have ran from the job log and shows them on a screen and allows you to select the command.
+Comes in handy when you need to run a bunch of commands over and over.  Keeps you from hitting F9 many times and missing a command. 
